@@ -3,10 +3,7 @@ package com.example.homework_3_6
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.WindowManager
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.example.homework_3_6.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -21,10 +18,9 @@ class MainActivity : AppCompatActivity() {
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
             )
         }
-
         if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction().add(R.id.image, ImageFragment()).commit()
-
+            supportFragmentManager.beginTransaction().add(R.id.container, FirstFragment()).commit()
         }
     }
+
 }
