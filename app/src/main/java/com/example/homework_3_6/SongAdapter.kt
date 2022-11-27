@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-
 import com.example.homework_3_6.databinding.ItemSongBinding
 
 class SongAdapter(val songList: ArrayList<Song>) : RecyclerView.Adapter<SongAdapter.ViewHolder>() {

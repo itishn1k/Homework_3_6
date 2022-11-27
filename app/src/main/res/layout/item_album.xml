@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/white"
     android:paddingVertical="16dp"
     android:paddingStart="24dp"
-    android:background="@color/white"
     android:paddingEnd="48dp">
 
     <TextView
@@ -29,7 +29,6 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/дуло"
-        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@id/tv_number"
@@ -52,8 +51,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/_2022"
-        android:textSize="12sp"
         android:textColor="@color/black"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

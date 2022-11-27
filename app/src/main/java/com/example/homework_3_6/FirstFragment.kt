@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.homework_3_6.databinding.FragmentFirstBinding
 
 class FirstFragment : Fragment() {
@@ -15,7 +14,7 @@ class FirstFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentFirstBinding.inflate(layoutInflater)
         return binding.root
     }
@@ -23,11 +22,17 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loadData()
-        val adapter = AlbumAdapter(list)
+        val adapter = AlbumAdapter(list,this::onClick)
         binding.rvArtistAlbum.adapter=adapter
+    }
+    private fun onClick(position:Int){
+       requireActivity().supportFragmentManager.beginTransaction()
+           .replace(R.id.container, SongsFragment())
+           .addToBackStack(null).commit()
     }
 
     private fun loadData() {
+        list.clear()
         list.add(Album(1, "Rare", "Selena Gomez", "2020"))
         list.add(Album(2, "2004", "Скриптонит", "2020"))
         list.add(Album(3, "After Hours", "The Weeknd", "2020"))
